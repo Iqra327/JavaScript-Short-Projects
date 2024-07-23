@@ -1,0 +1,25 @@
+body{
+  background: rgba(72, 163, 0, 0.07);
+  font-family: Poppins;
+}
+.focus-today-heading{
+  font-size: 64px;
+  color : rgb(67, 157, 34);
+}
+.form-page{
+  background-color: rgba(251, 251, 251, 1);
+  width: 660px;
+  border-radius: 15px;
+}
+.progress-bar{
+  background: rgba(72, 163, 0, 0.07);
+}
+.input-goal{
+  border-radius: 17px;
+  background-color: rgba(255, 255, 255, 1);
+  width:570px;
+}
+.input-radio-button{
+  scale: 1.4;
+  border-color: rgba(97, 72, 28, 0.3);
+}
