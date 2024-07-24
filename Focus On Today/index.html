@@ -13,34 +13,65 @@
   <script src="script.js" defer></script>
 </head>
 <body class="body">
-  <p class="mt-4 text-center fw-bold focus-today-heading">Focus on <span style="color:rgb(117, 80, 80)">Today</span></p>
+  <p class="mt-4 text-center fw-bold focus-today-heading">
+    Focus on 
+    <span style="color:rgb(117, 80, 80)">Today</span>
+  </p>
   <div class="container-fluid">
     <div class="row">
         <div class="col">
           <form class="form-page mx-auto mt-2 mb-5 p-5">
             <div class="d-flex align-items-center">
-              <p class="fw-bold today-text fs-2">Today</p>
-              <i class="fa-solid fa-sun ms-3 mb-3 fa-2xl" style="color: #FFD43B;"></i>
+              <p class="fw-bold today-text fs-2">
+                Today
+              </p>
+              <div class="position-relative">
+                <img src="img/🦆 icon _Sun_.svg" class="ms-3 mb-3 rotating-img">
+                <img src="img/face.svg" class="position-absolute" style="left:36px; top:20px">
+              </div>              
+              <!-- <i class="fa-solid fa-sun ms-3 mb-3 fa-2xl" style="color: #FFD43B;"></i> -->
             </div>
+            
             <div>
-              <p class="text-secondary mt-2 mb-4">Raise the bar by completing your goals!</p>
-              <img src="img/Rectangle 4.png">
-              <p class="mt-4" style="color: #FF5151;">Please set all the 3 goals!</p>
+              <p class="text-secondary mt-3 mb-3">
+                Raise the bar by completing your goals!
+              </p>
+              <div class="progress-bar">
+                <div class="progress-value d-flex align-items-center ps-3">
+                  2/3Completed
+                </div>
+              </div>
+              <p class="mt-3 error-msg js-error-msg" style="color: #FF5151;">
+                Please set all the 3 goals!
+              </p>
             </div>
-            <div class="border p-4 input-goal mb-5">
-              <input type="radio" class="input-radio-button opacity-50 me-3">
-              <input type="text" placeholder="Add new goal..." class=" opacity-50 border-0">
+            
+            <div class="border input-div mb-5 p-4 d-flex">
+              <div class="custom-checkbox">
+                <img src="img/tick-mark.svg" class="check-icon" alt="check-icon"></div>
+              <input type="text" placeholder="Add new goal..." class=" ps-4 border-0 input-area  js-input-area">
             </div>
-            <div class="border p-4 input-goal mb-5">
-              <input type="radio" class="input-radio-button opacity-50 me-3">
-              <input type="text" placeholder="Add new goal..." class=" opacity-50 border-0">
+            
+            <div class="border input-div mb-5 d-flex p-4">
+              <div class="custom-checkbox">
+                <img src="img/tick-mark.svg" class="check-icon" alt="check-icon">
+              </div>
+              <input type="text" placeholder="Add new goal..." class=" ps-4 border-0 input-area js-input-area">
             </div>
-            <div class="border p-4 input-goal">
-              <input type="radio" class="input-radio-button opacity-50 me-3">
-              <input type="text" placeholder="Add new goal..." class=" opacity-50 border-0">
+            
+            <div class="border p-4 input-div d-flex">
+              <div class="custom-checkbox">
+                <img src="img/tick-mark.svg" class="check-icon" alt="check-icon">
+              </div>
+              <input type="text" placeholder="Add new goal..." class="ps-4 border-0 input-area js-input-area">
             </div>
-            <p class="text-center mt-5" style="font-weight: 500;">"Move one step ahead, today!"</p>
-            <p class="text-secondary text-center mt-5 mb-2" style="font-size: 10px; font-weight: 500;">Made by Iqra Rasheed🤗</p>
+            
+            <p class="text-center mt-5" style="font-weight: 500;">
+              "Move one step ahead, today!"
+            </p>
+            <p class="made-by-text text-secondary text-center mt-5 mb-2" style="font-size: 10px; font-weight: 500;">
+              Made by Iqra Rasheed🤗
+            </p>
           </form>
         </div>
     </div>

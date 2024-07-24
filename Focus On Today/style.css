@@ -1,6 +1,6 @@
 body{
   background: rgba(72, 163, 0, 0.07);
-  font-family: Poppins;
+  font-family: Poppins, sans-serif;
 }
 .focus-today-heading{
   font-size: 64px;
@@ -8,18 +8,98 @@ body{
 }
 .form-page{
   background-color: rgba(251, 251, 251, 1);
-  width: 660px;
+  max-width: 660px;
+  box-shadow: 0px 0px 10px 0px lightgray;
   border-radius: 15px;
 }
 .progress-bar{
-  background: rgba(72, 163, 0, 0.07);
+  height: 30px;
+  background-color: rgba(72, 163, 0, 0.1);
+  border-radius: 30px;
 }
-.input-goal{
+.progress-value{
+  height: 100%;
+  width: 40%;
+  background-color: rgba(72, 163, 0, 1);
+  border-radius: 30px;
+  color: rgba(238, 255, 224, 1);
+  font-weight: 500;
+  font-size: 10px;
+}
+.input-div{
   border-radius: 17px;
   background-color: rgba(255, 255, 255, 1);
-  width:570px;
+  max-width:570px;
 }
-.input-radio-button{
-  scale: 1.4;
-  border-color: rgba(97, 72, 28, 0.3);
+.custom-checkbox{
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid rgb(97, 72, 28, 0.3);
+  flex-shrink: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.completed-task .custom-checkbox{
+  background-color: rgb(67, 157, 34);
+  border-color: rgb(67, 157, 34);
+}
+.check-icon{
+  display: none;
+}
+.completed-task .check-icon{
+  display: block;
+}
+.input-area{
+  outline: none;
+  width: 100%;
+  align-self: stretch;
+  font-weight: 500;
+}
+.completed-task .input-area{
+  color: rgba(72, 163, 0, 1);
+  text-decoration: line-through;
+  opacity: 100 !important;
+}
+.error-msg{
+  opacity: 0;
+}
+.error-msg-display{
+  opacity: none;
+}
+input[type=radio] {
+  accent-color: rgb(67, 157, 34);
+}
+@keyframes infinite-rotate {
+  0% {
+    transform: rotate(0deg);
+    }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.rotating-img{
+  animation: infinite-rotate 10s linear infinite;
+}
+
+
+
+@media(max-width: 730px) {
+  .focus-today-heading{
+    font-size: 32px;
+  }
+  .progress-bar{
+    height: 23px;
+  }
+  .form-page{
+    padding: 30px !important;
+  }
+ .input-div{
+  margin-bottom: 20px !important;
+ }
+ .made-by-text{
+  margin-top: 20px !important;
+ }
 }
