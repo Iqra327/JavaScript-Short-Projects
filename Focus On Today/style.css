@@ -61,7 +61,6 @@ body{
 .completed-task .input-area{
   color: rgba(72, 163, 0, 1);
   text-decoration: line-through;
-  opacity: 100 !important;
 }
 .error-msg{
   opacity: 0;
