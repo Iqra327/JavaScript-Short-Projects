@@ -19,7 +19,7 @@ body{
 }
 .progress-value{
   height: 100%;
-  width: 40%;
+  width: 0%;
   background-color: rgba(72, 163, 0, 1);
   border-radius: 30px;
   color: rgba(238, 255, 224, 1);
