@@ -3,12 +3,18 @@ const currentDay = day.format('MMMM D, dddd');
 
 document.querySelector('.today-text').innerHTML = `${currentDay}`;
 
+
 const checkboxList = document.querySelectorAll('.js-checkbox');
 const inputFields = document.querySelectorAll('.js-input-area');
 const errorLabel = document.querySelector('.js-error-msg');
-const progressBar = document.querySelector('.progress-value');
+const progressValue = document.querySelector('.progress-value');
+const goalBar = document.querySelector('.js-goalBar');
+
 
 const allGoals = JSON.parse(localStorage.getItem('allGoals')) || {};
+progressValue.style.width = `${(goalsCount() / 3) * 100}%`;
+goalBar.innerText = `${goalsCount()}/3 Completed`;
+
 
 checkboxList.forEach((checkbox) => {
   checkbox.addEventListener('click', () => {
@@ -17,12 +23,16 @@ checkboxList.forEach((checkbox) => {
     })
     if(allGoalsAdded){
       checkbox.parentElement.classList.toggle('completed-task');
-      progressBar.style.width = '50%';
       const inputId = checkbox.nextElementSibling.id;
       allGoals[inputId].completed = !allGoals[inputId].completed;
+      goalsCount();
+      progressValue.style.width = `${(goalsCount() / 3) * 100}%`;
+      goalBar.innerText = `${goalsCount()}/3 Completed`;
       SaveToStorage();
+      
     }
-    else{
+    else
+    {
       checkbox.parentElement.classList.remove('completed-task');
       errorLabel.classList.remove('error-msg');
       errorLabel.classList.add('error-msg-display');
@@ -61,3 +71,8 @@ inputFields.forEach((input) => {
 function SaveToStorage(){
   localStorage.setItem('allGoals', JSON.stringify(allGoals));
 }
+
+function goalsCount(){
+  let completedGoalsCount = Object.values(allGoals).filter((count) => count.completed).length;
+  return completedGoalsCount;
+};
