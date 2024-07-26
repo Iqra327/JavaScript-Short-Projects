@@ -11,6 +11,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" >
   <script src="script.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+
 </head>
 <body class="body">
   <p class="mt-4 text-center fw-bold focus-today-heading">
@@ -22,9 +24,7 @@
         <div class="col">
           <form class="form-page mx-auto mt-2 mb-5 p-5">
             <div class="d-flex align-items-center">
-              <p class="fw-bold today-text fs-2">
-                Today
-              </p>
+              <p class="fw-bold today-text fs-2"></p>
               <div class="position-relative">
                 <img src="img/🦆 icon _Sun_.svg" class="ms-3 mb-3 rotating-img">
                 <img src="img/face.svg" class="position-absolute" style="left:36px; top:20px">
@@ -46,25 +46,25 @@
               </p>
             </div>
             
-            <div class="border input-div mb-5 p-4 d-flex">
+            <div class="border input-div js-input mb-5 p-4 d-flex">
               <div class="custom-checkbox js-checkbox">
                 <img src="img/tick-mark.svg" class="check-icon" alt="check-icon">
               </div>
-              <input type="text" placeholder="Add new goal..." class=" ps-4 border-0 input-area  js-input-area">
+              <input id= "first" type="text" placeholder="Add new goal..." class=" ps-4 border-0 input-area  js-input-area">
             </div>
             
             <div class="border input-div mb-5 d-flex p-4">
               <div class="custom-checkbox js-checkbox">
                 <img src="img/tick-mark.svg" class="check-icon" alt="check-icon">
               </div>
-              <input type="text" placeholder="Add new goal..." class=" ps-4 border-0 input-area js-input-area">
+              <input id="second" type="text" placeholder="Add new goal..." class=" ps-4 border-0 input-area js-input-area">
             </div>
             
             <div class="border p-4 input-div d-flex">
               <div class="custom-checkbox js-checkbox">
                 <img src="img/tick-mark.svg" class="check-icon" alt="check-icon">
               </div>
-              <input type="text" placeholder="Add new goal..." class="ps-4 border-0 input-area js-input-area">
+              <input id="third" type="text" placeholder="Add new goal..." class="ps-4 border-0 input-area js-input-area">
             </div>
             
             <p class="text-center mt-5" style="font-weight: 500;">
