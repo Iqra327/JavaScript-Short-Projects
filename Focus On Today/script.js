@@ -9,12 +9,38 @@ const inputFields = document.querySelectorAll('.js-input-area');
 const errorLabel = document.querySelector('.js-error-msg');
 const progressValue = document.querySelector('.progress-value');
 const goalBar = document.querySelector('.js-goalBar');
+const barTitle = document.querySelector('.js-bar-title');
+const belowTitle = document.querySelector('.js-belowTitle');
 
 
-const allGoals = JSON.parse(localStorage.getItem('allGoals')) || {};
-progressValue.style.width = `${(goalsCount() / 3) * 100}%`;
-goalBar.innerText = `${goalsCount()}/3 Completed`;
+const allTitles = [
+  'Raise the bar by completing your goals!',
+  'Well begun is half done!',
+  'Just a step away, keep going!',
+  'Just a step away, keep going!',
+  'Whoa! You just completed all the goals, time for chill :)'
+]
+const allBelowTitles = [
+  '"Move one step ahead, today!"',
+  "Keep Going, You're making great progress!",
+  "Keep Going, You're making great progress!",
+  "Keep Going, You're making great progress!",
+  "Keep Going, You're making great progress!"
+]
 
+const allGoals = JSON.parse(localStorage.getItem('allGoals')) || {
+  first: { 
+    name: '', 
+    completed: false 
+  },
+  second: { name: '', completed: false },
+  third: { name: '', completed: false },
+  forth: { name: '', completed: false }
+};
+progressValue.style.width = `${(goalsCount() / 4) * 100}%`;
+goalBar.innerText = `${goalsCount()}/4 Completed`;
+barTitle.innerHTML = allTitles[goalsCount()];
+belowTitle.innerHTML = allBelowTitles[goalsCount()];
 
 checkboxList.forEach((checkbox) => {
   checkbox.addEventListener('click', () => {
@@ -26,8 +52,10 @@ checkboxList.forEach((checkbox) => {
       const inputId = checkbox.nextElementSibling.id;
       allGoals[inputId].completed = !allGoals[inputId].completed;
       goalsCount();
-      progressValue.style.width = `${(goalsCount() / 3) * 100}%`;
-      goalBar.innerText = `${goalsCount()}/3 Completed`;
+      progressValue.style.width = `${(goalsCount() / 4) * 100}%`;
+      barTitle.innerHTML = allTitles[goalsCount()];
+      belowTitle.innerHTML = allBelowTitles[goalsCount()];
+      goalBar.innerText = `${goalsCount()}/4 Completed`;
       SaveToStorage();
       
     }
@@ -59,10 +87,12 @@ inputFields.forEach((input) => {
     input.parentElement.classList.remove('inputDiv-border');
   })
   input.addEventListener('input', (e) => {
-    allGoals[input.id] = {
-      name: input.value,
-      completed: false
+    if(allGoals[input.id].completed){
+      input.value = allGoals[input.id].name
+      return;
     }
+    allGoals[input.id].name = input.value;
+
    SaveToStorage();
   })
 
